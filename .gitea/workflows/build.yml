@@ -28,13 +28,13 @@ jobs:
       run: ./gradlew clean build
 
     - name: Upload Fabric JAR
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: more-spear-enchantments-fabric
         path: fabric/build/libs/*.jar
 
     - name: Upload NeoForge JAR
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: more-spear-enchantments-neoforge
         path: neoforge/build/libs/*.jar
