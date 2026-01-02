@@ -1,0 +1,36 @@
+{
+  "anvil_cost": 5,
+  "description": {
+    "translate": "enchantment.more_spear_enchantments.withering"
+  },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "more_spear_enchantments:withering",
+          "duration": {
+            "type": "minecraft:linear",
+            "base": 2.0,
+            "per_level_above_first": 1.0
+          }
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 1,
+    "per_level_above_first": 15
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "hand"
+  ],
+  "supported_items": "#more_spear_enchantments:spears",
+  "weight": 10
+}

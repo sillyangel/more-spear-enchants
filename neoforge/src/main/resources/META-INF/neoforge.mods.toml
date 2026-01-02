@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[10,)"
+issueTrackerURL = "https://git.sillyangel.dev/angel/more-spear-enchants-neoforge/issues"
+license = "MIT"
+
+[[mods]]
+modId = "more_spear_enchantments"
+version = "${version}"
+displayName = "More Spear Enchantments"
+authors = "sillyangel"
+description = '''
+more enchantments for the newly added spear from the Mounts of Mayhem update.
+'''
+logoFile = "icon.png"
+
+[[dependencies.more_spear_enchantments]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.11,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.more_spear_enchantments]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.11,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.more_spear_enchantments]]
+modId = "architectury"
+type = "required"
+versionRange = "[19.0.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "more_spear_enchantments.mixins.json"
