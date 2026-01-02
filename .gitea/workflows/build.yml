@@ -40,7 +40,7 @@ jobs:
         path: neoforge/build/libs/*.jar
 
     - name: Upload Common JAR
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: more-spear-enchantments-common
         path: common/build/libs/*.jar
