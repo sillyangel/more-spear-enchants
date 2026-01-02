@@ -1,0 +1,75 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Eclipse
+*.launch
+.settings/
+.metadata
+.classpath
+.project
+.recommenders
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Fabric
+run/
+runs/
+
+# Architectury
+.architectury-transformer/
+
+# Loom
+.loom-cache/
+remapped/
+
+# Minecraft
+logs/
+crash-reports/
+saves/
+screenshots/
+resourcepacks/
+config/
+options.txt
+servers.dat
+usercache.json
+usernamecache.json
+banned-ips.json
+banned-players.json
+ops.json
+whitelist.json
+eula.txt
+
+# Java
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.log
+hs_err_pid*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Generated sources (comment out if you want to commit generated data)
+ common/src/generated/
+
+# Build outputs
+*.dev.jar
+*.sources.jar
+*-dev-shadow.jar
+
