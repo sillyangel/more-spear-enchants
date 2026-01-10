@@ -1,6 +1,8 @@
-## More Spear Enchantments
+<h1 align="left"><strong> More Spear Enchantments </strong></h1>
+<p align="left">
+<img alt="modrinth" height="35" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_vector.svg"><img alt="curseforge" height="35" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/curseforge_vector.svg"><img alt="fabric" height="35" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/supported/fabric_vector.svg">
+</p>
 
-<img alt="modrinth" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_vector.svg">
-<img alt="curseforge" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/curseforge_vector.svg">
+[gitea repo](https://git.sillyangel.dev/angel/more-spear-enchants)
 
-<img alt="fabric" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/supported/fabric_vector.svg">
+[github mirror](https://github.com/sillyangel/more-spear-enchants/)
