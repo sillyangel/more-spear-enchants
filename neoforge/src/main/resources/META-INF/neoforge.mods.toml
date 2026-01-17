@@ -1,7 +1,9 @@
 modLoader = "javafml"
 loaderVersion = "[10,)"
-issueTrackerURL = "https://git.sillyangel.dev/angel/more-spear-enchants-neoforge/issues"
+issueTrackerURL = "https://git.sillyangel.dev/angel/more-spear-enchants/issues"
+updateJSONURL= "https://git.sillyangel.dev/angel/more-spear-enchants/raw/branch/master/update.json"
 license = "MIT"
+
 
 [[mods]]
 modId = "more_spear_enchantments"
