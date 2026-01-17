@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "more_spear_enchantments:crippling",
+    "more_spear_enchantments:poisoning",
+    "more_spear_enchantments:thundering",
+    "more_spear_enchantments:withering"
+  ]
+}
