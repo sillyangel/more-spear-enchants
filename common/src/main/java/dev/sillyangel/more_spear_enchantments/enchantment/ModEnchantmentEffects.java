@@ -5,22 +5,22 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import dev.sillyangel.more_spear_enchantments.MoreSpearEnchantments;
 import dev.sillyangel.more_spear_enchantments.enchantment.effect.*;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 
 public class ModEnchantmentEffects {
 	// Deferred register for enchantment effect types
 	public static final DeferredRegister<MapCodec<? extends EnchantmentEntityEffect>> ENCHANTMENT_ENTITY_EFFECTS =
-			DeferredRegister.create(MoreSpearEnchantments.MOD_ID, RegistryKeys.ENCHANTMENT_ENTITY_EFFECT_TYPE);
+			DeferredRegister.create(MoreSpearEnchantments.MOD_ID, Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE);
 
 	// Enchantment registry keys
-	public static final RegistryKey<Enchantment> THUNDERING = of("thundering");
-	public static final RegistryKey<Enchantment> WITHERING = of("withering");
-	public static final RegistryKey<Enchantment> POISONING = of("poisoning");
-	public static final RegistryKey<Enchantment> CRIPPLING = of("crippling");
+	public static final ResourceKey<Enchantment> THUNDERING = of("thundering");
+	public static final ResourceKey<Enchantment> WITHERING = of("withering");
+	public static final ResourceKey<Enchantment> POISONING = of("poisoning");
+	public static final ResourceKey<Enchantment> CRIPPLING = of("crippling");
 
 	// Register enchantment effect types
 	public static final RegistrySupplier<MapCodec<LightningEnchantmentEffect>> LIGHTNING_EFFECT =
@@ -32,9 +32,9 @@ public class ModEnchantmentEffects {
 	public static final RegistrySupplier<MapCodec<CripplingEnchantmentEffect>> CRIPPLING_EFFECT =
 			ENCHANTMENT_ENTITY_EFFECTS.register("crippling", () -> CripplingEnchantmentEffect.CODEC);
 
-	private static RegistryKey<Enchantment> of(String path) {
-		Identifier id = Identifier.of(MoreSpearEnchantments.MOD_ID, path);
-		return RegistryKey.of(RegistryKeys.ENCHANTMENT, id);
+	private static ResourceKey<Enchantment> of(String path) {
+		Identifier id = Identifier.fromNamespaceAndPath(MoreSpearEnchantments.MOD_ID, path);
+		return ResourceKey.create(Registries.ENCHANTMENT, id);
 	}
 
 	public static void registerModEnchantmentEffects() {
