@@ -25,12 +25,11 @@ public record WitheringEnchantmentEffect(LevelBasedValue duration) implements En
         if (target instanceof LivingEntity victim) {
             if (context.owner() != null && context.owner() instanceof Player player) {
                 int witherDuration = (int) (this.duration.calculate(level) * 40); // Convert to ticks
-                int witherAmplifier = level - 2; // Level 1 = Wither 0, Level 2 = Wither I, Level 3 = Wither II
 
                 victim.addEffect(new MobEffectInstance(
                         MobEffects.WITHER,
                         witherDuration,
-                        witherAmplifier,
+                        level,
                         false,
                         true
                 ));
