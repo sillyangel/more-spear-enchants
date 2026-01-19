@@ -1,6 +1,7 @@
 package dev.sillyangel.more_spear_enchantments.fabric.enchantment;
 
 import dev.sillyangel.more_spear_enchantments.util.ModTags;
+import dev.sillyangel.more_spear_enchantments.enchantment.ModEnchantmentEffects;
 import dev.sillyangel.more_spear_enchantments.enchantment.effect.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
@@ -105,6 +106,47 @@ public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 					EnchantmentTarget.ATTACKER,
 					EnchantmentTarget.VICTIM,
 					new CripplingEnchantmentEffect(LevelBasedValue.perLevel(2.0f, 1.0f)) // 2s base, +1s per leve
+				)
+		);
+		// Our new enchantment, "Vampiric."
+		register(entries, ModEnchantmentEffects.VAMPIRIC, Enchantment.enchantment(
+				Enchantment.definition(
+					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
+					5, // Lower weight (rarer)
+					3,
+					Enchantment.dynamicCost(10, 8),
+					Enchantment.dynamicCost(50, 8),
+					4,
+					EquipmentSlotGroup.HAND
+				)
+			)
+                .withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					new VampiricEnchantmentEffect(LevelBasedValue.perLevel(0.5f, 0.5f)) // 0.5 base, +0.5 per level (50%, 100%, 150%)
+				)
+		);
+		// Our new enchantment, "Explosive."
+		register(entries, ModEnchantmentEffects.EXPLOSIVE, Enchantment.enchantment(
+				Enchantment.definition(
+					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
+					2, // Very rare
+					3,
+					Enchantment.dynamicCost(20, 10),
+					Enchantment.dynamicCost(70, 10),
+					8,
+					EquipmentSlotGroup.HAND
+				)
+			)
+                .withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					new ExplosiveEnchantmentEffect(
+						LevelBasedValue.perLevel(1.5f, 0.5f), // Power: 1.5, 2.0, 2.5
+						LevelBasedValue.perLevel(0.1f, 0.1f)  // Chance: 10%, 20%, 30%
+					)
 				)
 		);
 	}

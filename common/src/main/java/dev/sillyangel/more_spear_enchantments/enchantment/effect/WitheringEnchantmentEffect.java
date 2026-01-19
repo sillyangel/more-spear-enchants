@@ -24,7 +24,7 @@ public record WitheringEnchantmentEffect(LevelBasedValue duration) implements En
     public void apply(ServerLevel world, int level, EnchantedItemInUse context, Entity target, Vec3 pos) {
         if (target instanceof LivingEntity victim) {
             if (context.owner() != null && context.owner() instanceof Player player) {
-                int witherDuration = (int) (this.duration.calculate(level) * 40); // Convert to ticks
+                int witherDuration = (int) (this.duration.calculate(level) * 50); // Convert to ticks
 
                 victim.addEffect(new MobEffectInstance(
                         MobEffects.WITHER,

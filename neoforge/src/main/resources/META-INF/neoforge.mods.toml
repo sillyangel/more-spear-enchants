@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[10,)"
 issueTrackerURL = "https://git.sillyangel.dev/angel/more-spear-enchants/issues"
-updateJSONURL= "https://git.sillyangel.dev/angel/more-spear-enchants/raw/branch/master/update.json"
+updateJSONURL= "https://api.modrinth.com/updates/more-spear-enchantments/forge_updates.json"
 license = "MIT"
 
 

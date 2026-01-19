@@ -21,6 +21,8 @@ public class ModEnchantmentEffects {
 	public static final ResourceKey<Enchantment> WITHERING = of("withering");
 	public static final ResourceKey<Enchantment> POISONING = of("poisoning");
 	public static final ResourceKey<Enchantment> CRIPPLING = of("crippling");
+	public static final ResourceKey<Enchantment> VAMPIRIC = of("vampiric");
+	public static final ResourceKey<Enchantment> EXPLOSIVE = of("explosive");
 
 	// Register enchantment effect types
 	public static final RegistrySupplier<MapCodec<LightningEnchantmentEffect>> LIGHTNING_EFFECT =
@@ -31,6 +33,10 @@ public class ModEnchantmentEffects {
 			ENCHANTMENT_ENTITY_EFFECTS.register("withering", () -> WitheringEnchantmentEffect.CODEC);
 	public static final RegistrySupplier<MapCodec<CripplingEnchantmentEffect>> CRIPPLING_EFFECT =
 			ENCHANTMENT_ENTITY_EFFECTS.register("crippling", () -> CripplingEnchantmentEffect.CODEC);
+	public static final RegistrySupplier<MapCodec<VampiricEnchantmentEffect>> VAMPIRIC_EFFECT =
+			ENCHANTMENT_ENTITY_EFFECTS.register("vampiric", () -> VampiricEnchantmentEffect.CODEC);
+	public static final RegistrySupplier<MapCodec<ExplosiveEnchantmentEffect>> EXPLOSIVE_EFFECT =
+			ENCHANTMENT_ENTITY_EFFECTS.register("explosive", () -> ExplosiveEnchantmentEffect.CODEC);
 
 	private static ResourceKey<Enchantment> of(String path) {
 		Identifier id = Identifier.fromNamespaceAndPath(MoreSpearEnchantments.MOD_ID, path);
