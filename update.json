@@ -1,0 +1,11 @@
+{
+  "homepage": "https://modrinth.com/mod/more-spear-enchantments",
+  "1.21.11": {
+    "1.1.1": "added plugin support (paper, purpur, folia) - alpha\n- added new enchantments:\n  - 🩸 vampiric - lifesteal on hit (I~III)\n  - 💥 explosive - safe explosions on hit with chance and power scaling (I-III)\n- added 15 new translations (german, portuguese, italian, chinese, japanese, korean, russian, and more)\n- neoforge & forge only: switched update json to use the modrinth api instead of self hosted",
+    "1.1.0": "added to enchantment table (wow angel how did you forget, that is literally the whole point of the mod )\n, and switch to mojang mapping from yarn\n and the level of the book matches with the level of the effect, and each lvl duration is calculated by (level * 50) with 50 being ticks "
+  },
+  "promos": {
+    "1.21.11-latest": "1.1.1",
+    "1.21.11-recommended": "1.1.1"
+  }
+}
