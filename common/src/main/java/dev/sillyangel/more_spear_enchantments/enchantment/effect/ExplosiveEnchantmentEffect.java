@@ -28,7 +28,7 @@ public record ExplosiveEnchantmentEffect(LevelBasedValue power, LevelBasedValue 
                 float explosionChance = this.chance.calculate(level);
 
                 // Random check for explosion
-                if (world.random.nextFloat() < explosionChance) {
+                if (world.getRandom().nextFloat() < explosionChance) {
                     float explosionPower = this.power.calculate(level);
 
                     // Create explosion at victim's location

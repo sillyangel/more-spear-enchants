@@ -3,7 +3,7 @@ package dev.sillyangel.more_spear_enchantments.fabric.enchantment;
 import dev.sillyangel.more_spear_enchantments.util.ModTags;
 import dev.sillyangel.more_spear_enchantments.enchantment.ModEnchantmentEffects;
 import dev.sillyangel.more_spear_enchantments.enchantment.effect.*;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.minecraft.core.HolderLookup;
@@ -19,7 +19,7 @@ import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import java.util.concurrent.CompletableFuture;
 
 public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
-	public ModEnchantmentGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+	public ModEnchantmentGenerator(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 		super(output, registriesFuture);
 		System.out.println("REGISTERING ENCHANTS");
 	}

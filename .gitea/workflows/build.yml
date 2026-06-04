@@ -15,11 +15,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up JDK 21
+    - name: Set up JDK 25
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '21'
+        java-version: '25'
         cache: 'gradle'
 
     - name: Cache Gradle packages
@@ -51,9 +51,9 @@ jobs:
         name: more-spear-enchantments-neoforge
         path: neoforge/build/libs/*.jar
 
-    - name: Upload Common JAR
-      uses: actions/upload-artifact@v3
-      with:
-        name: more-spear-enchantments-common
-        path: common/build/libs/*.jar
+#    - name: Upload Common JAR
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: more-spear-enchantments-common
+#        path: common/build/libs/*.jar
 

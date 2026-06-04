@@ -29,10 +29,10 @@
     "more_spear_enchantments.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.3",
-    "minecraft": "~1.21.11",
-    "java": ">=21",
-    "architectury": ">=19.0.1",
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.1",
+    "java": ">=25",
+    "architectury": ">=20.0.4",
     "fabric-api": "*"
   },
   "custom": {
