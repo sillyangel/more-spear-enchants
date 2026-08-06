@@ -18,21 +18,21 @@ logoFile = "icon.png"
 [[dependencies.more_spear_enchantments]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.1.0.19-beta,)"
+versionRange = "[26.2.0.49-beta,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.more_spear_enchantments]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.1,)"
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.more_spear_enchantments]]
 modId = "architectury"
 type = "required"
-versionRange = "[20.0.4,)"
+versionRange = "[21.0.7,)"
 ordering = "AFTER"
 side = "BOTH"
 

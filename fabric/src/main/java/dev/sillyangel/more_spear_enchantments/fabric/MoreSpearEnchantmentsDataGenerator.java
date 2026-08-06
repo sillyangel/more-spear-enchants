@@ -12,5 +12,7 @@ public class MoreSpearEnchantmentsDataGenerator implements DataGeneratorEntrypoi
 
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModEnchantmentGenerator::new);
+
+
 	}
 }

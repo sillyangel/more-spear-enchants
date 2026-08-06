@@ -1,0 +1,36 @@
+{
+  "anvil_cost": 5,
+  "description": {
+    "translate": "enchantment.more_spear_enchantments.overrun"
+  },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "more_spear_enchantments:overrun",
+          "duration": {
+            "type": "minecraft:linear",
+            "base": 40.0,
+            "per_level_above_first": 20.0
+          }
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 8
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 8
+  },
+  "slots": [
+    "hand"
+  ],
+  "supported_items": "#more_spear_enchantments:spears",
+  "weight": 5
+}

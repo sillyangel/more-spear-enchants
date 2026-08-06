@@ -137,8 +137,7 @@ public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 					Enchantment.dynamicCost(70, 10),
 					8,
 					EquipmentSlotGroup.HAND
-				)
-			)
+				))
                 .withEffect(
 					EnchantmentEffectComponents.POST_ATTACK,
 					EnchantmentTarget.ATTACKER,
@@ -147,6 +146,27 @@ public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 						LevelBasedValue.perLevel(1.5f, 0.5f), // Power: 1.5, 2.0, 2.5
 						LevelBasedValue.perLevel(0.1f, 0.1f)  // Chance: 10%, 20%, 30%
 					)
+				)
+		);
+
+		// new enchanemtn overunn
+		register(entries, ModEnchantmentEffects.OVERRUN, Enchantment.enchantment(
+				Enchantment.definition(
+						registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
+						5,
+						3,
+						Enchantment.dynamicCost(10, 8),
+						Enchantment.dynamicCost(50, 8),
+						5,
+						EquipmentSlotGroup.HAND
+				))
+				.withEffect(
+						EnchantmentEffectComponents.POST_ATTACK,
+						EnchantmentTarget.ATTACKER,
+						EnchantmentTarget.VICTIM,
+						new OverrunEnchantmentEffect(
+								LevelBasedValue.perLevel(40.0f, 20.0f)
+						)
 				)
 		);
 	}
