@@ -24,6 +24,8 @@ public class ModEnchantmentEffects {
 	public static final ResourceKey<Enchantment> VAMPIRIC = of("vampiric");
 	public static final ResourceKey<Enchantment> EXPLOSIVE = of("explosive");
 	public static final ResourceKey<Enchantment> OVERRUN = of("overrun");
+	public static final ResourceKey<Enchantment> MOMENTUM = of("momentum");
+	public static final ResourceKey<Enchantment> IMPACT = of("impact");
 
 	// Register enchantment effect types
 	public static final RegistrySupplier<MapCodec<LightningEnchantmentEffect>> LIGHTNING_EFFECT =
@@ -40,6 +42,10 @@ public class ModEnchantmentEffects {
 			ENCHANTMENT_ENTITY_EFFECTS.register("explosive", () -> ExplosiveEnchantmentEffect.CODEC);
 	public static final RegistrySupplier<MapCodec<OverrunEnchantmentEffect>> OVERRUN_EFFECT =
 			ENCHANTMENT_ENTITY_EFFECTS.register("overrun", () -> OverrunEnchantmentEffect.CODEC);
+	public static final RegistrySupplier<MapCodec<MomentumEnchantmentEffect>> MOMENTUM_EFFECT =
+			ENCHANTMENT_ENTITY_EFFECTS.register("momentum", () -> MomentumEnchantmentEffect.CODEC);
+	public static final RegistrySupplier<MapCodec<ImpactEnchantmentEffect>> IMPACT_EFFECT =
+			ENCHANTMENT_ENTITY_EFFECTS.register("impact", () -> ImpactEnchantmentEffect.CODEC);
 
 	private static ResourceKey<Enchantment> of(String path) {
 		Identifier id = Identifier.fromNamespaceAndPath(MoreSpearEnchantments.MOD_ID, path);
@@ -51,4 +57,3 @@ public class ModEnchantmentEffects {
 		ENCHANTMENT_ENTITY_EFFECTS.register();
 	}
 }
-

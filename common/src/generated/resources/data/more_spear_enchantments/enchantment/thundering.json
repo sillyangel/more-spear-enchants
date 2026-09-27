@@ -1,5 +1,5 @@
 {
-  "anvil_cost": 5,
+  "anvil_cost": 1,
   "description": {
     "translate": "enchantment.more_spear_enchantments.thundering"
   },
@@ -21,12 +21,12 @@
   },
   "max_cost": {
     "base": 1,
-    "per_level_above_first": 15
+    "per_level_above_first": 1
   },
   "max_level": 3,
   "min_cost": {
     "base": 1,
-    "per_level_above_first": 10
+    "per_level_above_first": 1
   },
   "slots": [
     "hand"

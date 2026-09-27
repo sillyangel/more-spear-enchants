@@ -26,153 +26,181 @@ public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 
 	@Override
 	protected void configure(HolderLookup.Provider registries, Entries entries) {
-		// Our new enchantment, "Thundering."
+		// Thundering
 		register(entries, ModEnchantmentEffects.THUNDERING, Enchantment.enchantment(
 				Enchantment.definition(
 					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-					// this is the "weight" or probability of our enchantment showing up in the table
-					10,
-					// the maximum level of the enchantment
-					3,
-					// base cost for level 1 of the enchantment, and min levels required for something higher
-					Enchantment.dynamicCost(1, 10),
-					// same fields as above but for max cost
-					Enchantment.dynamicCost(1, 15),
-					// anvil cost
-					5,
-					// valid slots
+					10, 3,
+					Enchantment.dynamicCost(1, 1),
+					Enchantment.dynamicCost(1, 1),
+					1,
 					EquipmentSlotGroup.HAND
 				)
+			).withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new LightningEnchantmentEffect(LevelBasedValue.perLevel(0.4f, 0.2f))
 			)
-				.withEffect(
-					// enchantment occurs POST_ATTACK
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new LightningEnchantmentEffect(LevelBasedValue.perLevel(0.4f, 0.2f)) // scale the enchantment linearly.
-				)
 		);
+
+		// Poisoning
 		register(entries, ModEnchantmentEffects.POISONING, Enchantment.enchantment(
 				Enchantment.definition(
 						registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-						10,
-						3,
-						Enchantment.dynamicCost(1, 10),
-						Enchantment.dynamicCost(1, 15),
-						5,
+						10, 3,
+						Enchantment.dynamicCost(1, 1),
+						Enchantment.dynamicCost(1, 1),
+						1,
 						EquipmentSlotGroup.HAND
 				)
-		)
-				.withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new PoisonEnchantmentEffect(LevelBasedValue.perLevel(3.0f, 1.0f)) // 3s base, +1s per level
-				)
-		);
-		// Our new enchantment, "Withering."
+		).withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new PoisonEnchantmentEffect(LevelBasedValue.perLevel(3.0f, 1.0f))
+		));
+
+		// Withering
 		register(entries, ModEnchantmentEffects.WITHERING, Enchantment.enchantment(
 				Enchantment.definition(
 					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-					10,
-					3,
-					Enchantment.dynamicCost(1, 10),
-					Enchantment.dynamicCost(1, 15),
-					5,
+					10, 3,
+					Enchantment.dynamicCost(1, 1),
+					Enchantment.dynamicCost(1, 1),
+					1,
 					EquipmentSlotGroup.HAND
 				)
+			).withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new WitheringEnchantmentEffect(LevelBasedValue.perLevel(2.0f, 1.0f))
 			)
-				.withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new WitheringEnchantmentEffect(LevelBasedValue.perLevel(2.0f, 1.0f)) // 2s base, +1s per level
-				)
 		);
-		// Our new enchantment, "Crippling."
+
+		// Crippling
 		register(entries, ModEnchantmentEffects.CRIPPLING, Enchantment.enchantment(
 				Enchantment.definition(
 					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-					10,
-					3,
-					Enchantment.dynamicCost(1, 10),
-					Enchantment.dynamicCost(1, 15),
-					5,
+					10, 3,
+					Enchantment.dynamicCost(1, 1),
+					Enchantment.dynamicCost(1, 1),
+					1,
 					EquipmentSlotGroup.HAND
 				)
+			).withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new CripplingEnchantmentEffect(LevelBasedValue.perLevel(2.0f, 1.0f))
 			)
-                .withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new CripplingEnchantmentEffect(LevelBasedValue.perLevel(2.0f, 1.0f)) // 2s base, +1s per leve
-				)
 		);
-		// Our new enchantment, "Vampiric."
+
+		// Vampiric
 		register(entries, ModEnchantmentEffects.VAMPIRIC, Enchantment.enchantment(
 				Enchantment.definition(
 					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-					5, // Lower weight (rarer)
-					3,
-					Enchantment.dynamicCost(10, 8),
-					Enchantment.dynamicCost(50, 8),
-					4,
+					5, 3,
+					Enchantment.dynamicCost(1, 1),
+					Enchantment.dynamicCost(1, 1),
+					1,
 					EquipmentSlotGroup.HAND
 				)
+			).withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new VampiricEnchantmentEffect(LevelBasedValue.perLevel(0.5f, 0.5f))
 			)
-                .withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new VampiricEnchantmentEffect(LevelBasedValue.perLevel(0.5f, 0.5f)) // 0.5 base, +0.5 per level (50%, 100%, 150%)
-				)
 		);
-		// Our new enchantment, "Explosive."
+
+		// Explosive
 		register(entries, ModEnchantmentEffects.EXPLOSIVE, Enchantment.enchantment(
 				Enchantment.definition(
 					registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-					2, // Very rare
-					3,
-					Enchantment.dynamicCost(20, 10),
-					Enchantment.dynamicCost(70, 10),
-					8,
+					2, 3,
+					Enchantment.dynamicCost(1, 1),
+					Enchantment.dynamicCost(1, 1),
+					1,
 					EquipmentSlotGroup.HAND
 				))
-                .withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new ExplosiveEnchantmentEffect(
-						LevelBasedValue.perLevel(1.5f, 0.5f), // Power: 1.5, 2.0, 2.5
-						LevelBasedValue.perLevel(0.1f, 0.1f)  // Chance: 10%, 20%, 30%
-					)
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new ExplosiveEnchantmentEffect(
+					LevelBasedValue.perLevel(1.5f, 0.5f),
+					LevelBasedValue.perLevel(0.1f, 0.1f)
 				)
+			)
 		);
 
-		// new enchanemtn overunn
+		// Overrun
 		register(entries, ModEnchantmentEffects.OVERRUN, Enchantment.enchantment(
 				Enchantment.definition(
 						registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
-						5,
-						3,
-						Enchantment.dynamicCost(10, 8),
-						Enchantment.dynamicCost(50, 8),
-						5,
+						5, 3,
+						Enchantment.dynamicCost(1, 1),
+						Enchantment.dynamicCost(1, 1),
+						1,
 						EquipmentSlotGroup.HAND
 				))
-				.withEffect(
-						EnchantmentEffectComponents.POST_ATTACK,
-						EnchantmentTarget.ATTACKER,
-						EnchantmentTarget.VICTIM,
-						new OverrunEnchantmentEffect(
-								LevelBasedValue.perLevel(40.0f, 20.0f)
-						)
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new OverrunEnchantmentEffect(LevelBasedValue.perLevel(40.0f, 20.0f))
+			)
+		);
+
+		// Momentum - consecutive kills build damage stacks
+		register(entries, ModEnchantmentEffects.MOMENTUM, Enchantment.enchantment(
+				Enchantment.definition(
+						registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
+						8, 3,
+						Enchantment.dynamicCost(1, 1),
+						Enchantment.dynamicCost(1, 1),
+						1,
+						EquipmentSlotGroup.HAND
+				))
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new MomentumEnchantmentEffect(
+						LevelBasedValue.perLevel(0.15f, 0.05f),  // 15% base, +5% per level
+						LevelBasedValue.perLevel(3.0f, 1.0f),      // max 3 stacks base, +1 per level
+						LevelBasedValue.perLevel(8.0f, 2.0f)       // 8s base, +2s per level
 				)
+			)
+		);
+
+		// Impact - kill creates shockwave
+		register(entries, ModEnchantmentEffects.IMPACT, Enchantment.enchantment(
+				Enchantment.definition(
+						registries.lookupOrThrow(Registries.ITEM).getOrThrow(ModTags.Items.SPEARS),
+						3, 3,
+						Enchantment.dynamicCost(1, 1),
+						Enchantment.dynamicCost(1, 1),
+						1,
+						EquipmentSlotGroup.HAND
+				))
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new ImpactEnchantmentEffect(
+						LevelBasedValue.perLevel(4.0f, 1.0f),   // 4 block radius base, +1 per level
+						LevelBasedValue.perLevel(1.5f, 0.5f),   // knockback 1.5 base, +0.5 per level
+						LevelBasedValue.perLevel(3.0f, 1.0f)    // 3 damage base, +1 per level
+				)
+			)
 		);
 	}
 
 	private void register(Entries entries, ResourceKey<Enchantment> key, Enchantment.Builder builder, ResourceCondition... resourceConditions) {
-		entries.add(key, builder.build(key.identifier()), resourceConditions); //idk, im going insane
+		entries.add(key, builder.build(key.identifier()), resourceConditions);
 	}
 
 	@Override
@@ -180,4 +208,3 @@ public class ModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 		return "ModEnchantmentGenerator";
 	}
 }
-
