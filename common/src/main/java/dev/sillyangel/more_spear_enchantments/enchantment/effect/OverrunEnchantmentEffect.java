@@ -72,7 +72,7 @@ public record OverrunEnchantmentEffect(LevelBasedValue duration) implements Ench
                 movement.z
         );
 
-        player.hurtMarked = true;
+        player.syncVelocity = true;
     }
 
 

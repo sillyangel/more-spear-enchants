@@ -1,5 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/more-spear-enchantments",
+  "26.3": {
+    "1.2.0":""
+  },
   "26.2": {
     "1.1.2": "support for the new minecraft version, one new added enchantment: \n  - overrun: after each kill you gain speed for a duration based on the level of the enchantment"
   },
@@ -11,6 +14,8 @@
     "1.1.0": "added to enchantment table (wow angel how did you forget, that is literally the whole point of the mod )\n, and switch to mojang mapping from yarn\n and the level of the book matches with the level of the effect, and each lvl duration is calculated by (level * 50) with 50 being ticks "
   },
   "promos": {
+    "26.3-latest": "1.2.0",
+    "26.3-recommended": "1.2.0",
     "26.2-latest": "1.1.2",
     "26.2-recommended": "1.1.2",
     "26.1-latest": "1.1.1",
